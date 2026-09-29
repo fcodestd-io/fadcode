@@ -1,0 +1,17 @@
+---
+import { skills } from '../data/site';
+---
+
+<section id="skill">
+  <div class="wrap">
+    <h2>Skill</h2>
+    <dl class="skills" data-reveal>
+      {skills.map((s) => (
+        <>
+          <dt><i data-lucide={s.icon}></i>{s.group}</dt>
+          <dd>{s.items.join(', ')}</dd>
+        </>
+      ))}
+    </dl>
+  </div>
+</section>

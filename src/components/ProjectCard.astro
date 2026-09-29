@@ -1,0 +1,22 @@
+---
+import type { Project } from '../data/site';
+
+type Props = Project;
+const { title, icon, desc, stack, demo, repo } = Astro.props;
+---
+
+<article class="project" data-reveal>
+  <h3><i data-lucide={icon}></i>{title}</h3>
+  <p>{desc}</p>
+  <div>
+    <ul class="chips" aria-label={`Teknologi ${title}`}>
+      {stack.map((s) => <li>{s}</li>)}
+    </ul>
+    {(demo || repo) && (
+      <div class="links">
+        {demo && <a href={demo}>Lihat demo<i data-lucide="arrow-up-right"></i></a>}
+        {repo && <a href={repo}>Lihat kode<i data-lucide="arrow-up-right"></i></a>}
+      </div>
+    )}
+  </div>
+</article>

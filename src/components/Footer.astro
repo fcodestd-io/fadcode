@@ -1,0 +1,14 @@
+---
+import { me, links } from '../data/site';
+---
+
+<footer>
+  <div class="wrap">
+    {links.length > 0 && (
+      <div class="links">
+        {links.map((l) => <a href={l.href}><i data-lucide={l.icon}></i>{l.label}</a>)}
+      </div>
+    )}
+    <div>© {new Date().getFullYear()} {me.handle} · {me.name}</div>
+  </div>
+</footer>
